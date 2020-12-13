@@ -75,7 +75,7 @@
   }
 
   figcaption {
-    @apply py-2 text-center max-w-2xl mx-auto text-coal-300;
+    @apply py-2 text-center max-w-2xl mx-auto text-coal-400;
   }
 
   /* PrismJS 1.22.0

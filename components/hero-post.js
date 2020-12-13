@@ -20,14 +20,14 @@ export default function HeroPost({
       <div className="md:grid md:grid-cols-2 md:col-gap-16 lg:col-gap-8 mb-20 md:mb-28">
         <div>
           <h3 className="mb-4 leading-tight">
-            <Link as={`/posts/${slug}`} href="/posts/[slug]">
+            <Link as={`/posts/${slug}`} href={`/posts/${encodeURIComponent(slug)}`}>
               <a className="hover:underline">{title}</a>
             </Link>
           </h3>
 
           <div className="mb-4 md:mb-0">
             <h6>{author.name}</h6>
-            <DateFormatter dateString={date} className='text-coal-300'/>
+            <DateFormatter dateString={date} className='text-coal-400'/>
           </div>
         </div>
 

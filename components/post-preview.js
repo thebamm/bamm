@@ -18,14 +18,15 @@ export default function PostPreview({
       </div>
 
       <h4 className="mb-3 leading-snug">
-        <Link as={`/posts/${slug}`} href="/posts/[slug]">
+        {/*<Link as={`/posts/${slug}`} href="/posts/[slug]" href={`/posts/${encodeURIComponent(slug)}`}>*/}
+        <Link as={`/posts/${slug}`} href={`/posts/${encodeURIComponent(slug)}`}>
           <a className="hover:underline">{title}</a>
         </Link>
       </h4>
 
       <div className="text-lg mb-4">
         <h6>{author.name}</h6>
-        <DateFormatter dateString={date}  className='text-coal-300'/>
+        <DateFormatter dateString={date}  className='text-coal-400'/>
       </div>
 
       <p className="leading-relaxed mb-4">{excerpt}</p>

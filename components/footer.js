@@ -10,6 +10,7 @@ export default function Footer() {
           <div className="flex mb-10 lg:mb-0 items-center lg:pr-4 lg:w-1/2">
             <Link href='/'>
               <a className='block'>
+                <span className="sr-only">bamm blog home page</span>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   viewBox='0 0 1280 330'

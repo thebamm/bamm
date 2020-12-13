@@ -36,6 +36,7 @@ export default function Header() {
           <div className='md:flex items-center'>
             <Link href='/'>
               <a className='block'>
+                <span className="sr-only">bamm blog home page</span>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   viewBox='0 0 1280 330'
