@@ -1,3 +1,10 @@
-export default function Container({ children }) {
-  return <div className="container mx-auto px-5">{children}</div>
+import cn from 'classnames'
+
+export default function Container({ children, className }) {
+  const containerClassNames = cn(
+    'container mx-auto px-4 sm:px-6 lg:px-8',
+    className
+  )
+
+  return <div className={containerClassNames}>{children}</div>
 }

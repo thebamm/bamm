@@ -1,7 +1,7 @@
 import cn from 'classnames'
 import Link from 'next/link'
 
-export default function CoverImage({ title, src, slug }) {
+export default function CoverImage({ title, src, slug, figcaption }) {
   const image = (
     <img
       src={src}
@@ -18,7 +18,15 @@ export default function CoverImage({ title, src, slug }) {
           <a aria-label={title}>{image}</a>
         </Link>
       ) : (
-        image
+        <figure>
+          {image}
+
+          {figcaption &&
+            <figcaption>
+              {figcaption}
+            </figcaption>
+          }
+        </figure>
       )}
     </div>
   )
