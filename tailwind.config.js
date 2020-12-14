@@ -1,10 +1,17 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  purge: [
-    './components/**/*.{js,ts,jsx,tsx}',
-    './pages/**/*.{js,ts,jsx,tsx}'
-  ],
+  purge: {
+    content: [
+      './components/**/*.{js,ts,jsx,tsx}',
+      './pages/**/*.{js,ts,jsx,tsx}',
+    ],
+    // These options are passed through directly to PurgeCSS
+    // https://purgecss.com/configuration.html#options
+    options: {
+      // safelist: ['bg-red-500', 'px-4'],
+    }
+  },
   darkMode: 'class', // 'media' or 'class'
   theme: {
     extend: {

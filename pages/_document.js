@@ -6,7 +6,7 @@ export default class MyDocument extends Document {
       <Html lang='en' className='antialiased text-base'>
         <Head />
 
-        <body className='bg-apple-50 text-coal-500 dark:bg-coal-800 dark:text-apple-50'>
+        <body className='bg-white text-coal-500 dark:bg-coal-800 dark:text-apple-50'>
           <Main />
           <NextScript />
         </body>

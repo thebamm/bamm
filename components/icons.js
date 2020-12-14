@@ -13,8 +13,8 @@ export const IconClock = ({className}) => {
       viewBox='0 0 256 256'
     >
       <path fill="none" d="M0 0h256v256H0z"/>
-      <circle cx="128" cy="128" r="96" fill="none" stroke="#000" strokeMiterlimit="10" strokeWidth="16"/>
-      <path fill="none" stroke="#000" strokeLinecap="round" strokeLinejoin="round" strokeWidth="16" d="M128 72v56h56"/>
+      <circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" strokeMiterlimit="10" strokeWidth="16"/>
+      <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="16" d="M128 72v56h56"/>
     </svg>
   )
 }

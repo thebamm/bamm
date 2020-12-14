@@ -13,7 +13,7 @@ export default function HeroPost({
 }) {
   return (
     <section>
-      <div className="mb-8 md:mb-16">
+      <div className="mb-8 md:mb-16 relative h-96">
         <CoverImage title={title} src={coverImage} slug={slug} />
       </div>
 
@@ -27,7 +27,7 @@ export default function HeroPost({
 
           <div className="mb-4 md:mb-0">
             <p className='text-xl font-bold'>{author.name}</p>
-            <DateFormatter dateString={date} className='text-coal-400'/>
+            <DateFormatter dateString={date} className='text-coal-400 dark:text-apple-50'/>
           </div>
         </div>
 

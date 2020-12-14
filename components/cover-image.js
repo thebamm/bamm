@@ -19,9 +19,11 @@ export default function CoverImage({ title, src, slug, figcaption }) {
       className={cn('shadow-small', {
         'hover:shadow-medium transition-shadow duration-200': slug,
       })}
+      layout='fill'
+      objectFit='cover'
       quality={100}
-      width={1600}
-      height={450}
+      // width={1600}
+      // height={450}
     />
   )
   return (

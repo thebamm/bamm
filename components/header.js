@@ -30,7 +30,7 @@ export default function Header() {
   }, [darkMode]);
 
   return (
-    <header className='sticky top-0 z-40 bg-apple-50 dark:bg-coal-800'>
+    <header className='sticky top-0 z-40 bg-white dark:bg-coal-800'>
       <Container>
         <div className='flex items-center justify-between py-4'>
           <div className='md:flex items-center'>
