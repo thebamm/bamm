@@ -24,8 +24,8 @@ export default function PostPreview({
         </Link>
       </h4>
 
-      <div className="text-lg mb-4">
-        <h6>{author.name}</h6>
+      <div className='mb-4'>
+        <p className='text-xl font-bold'>{author.name}</p>
         <DateFormatter dateString={date}  className='text-coal-400'/>
       </div>
 

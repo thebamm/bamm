@@ -24,9 +24,9 @@ export default function Footer() {
             </Link>
           </div>
 
-          <h5 className="tracking-tighter leading-tight text-center lg:text-left lg:pl-4 lg:w-1/2">
+          <p className="text-2xl font-bold tracking-tighter leading-tight text-center lg:text-left lg:pl-4 lg:w-1/2">
             Web, Tech and Beyond
-          </h5>
+          </p>
 
         {/*  <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">*/}
         {/*    <a*/}

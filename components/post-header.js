@@ -8,7 +8,7 @@ export default function PostHeader({ title, coverImage, date, author, figcaption
       <PostTitle>{title}</PostTitle>
 
       <div className="mb-6 text-center">
-        <h6>{author.name}</h6>
+        <p className='text-xl font-bold'>{author.name}</p>
         <DateFormatter dateString={date} className='text-coal-400'/>
       </div>
 

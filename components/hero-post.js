@@ -26,7 +26,7 @@ export default function HeroPost({
           </h3>
 
           <div className="mb-4 md:mb-0">
-            <h6>{author.name}</h6>
+            <p className='text-xl font-bold'>{author.name}</p>
             <DateFormatter dateString={date} className='text-coal-400'/>
           </div>
         </div>
