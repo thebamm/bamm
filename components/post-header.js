@@ -12,8 +12,8 @@ export default function PostHeader({ title, coverImage, date, author, figcaption
         <DateFormatter dateString={date} className='text-coal-400 dark:text-apple-50' />
       </div>
 
-      <div className="mb-8 md:mb-16 sm:mx-0 relative h-96">
-        <CoverImage title={title} src={coverImage} figcaption={figcaption}/>
+      <div className="mb-8 md:mb-16 sm:mx-0">
+        <CoverImage title={title} src={coverImage} figcaption={figcaption} className='h-96'/>
       </div>
     </>
   )

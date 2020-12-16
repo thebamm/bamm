@@ -16,18 +16,61 @@ Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidu
 
 ## Lorem Ipsum
 
-Tristique senectus et netus et malesuada fames ac turpis. Ridiculous mus mauris vitae ultricies leo integer malesuada nunc vel. In mollis nunc sed id semper. Egestas tellus rutrum tellus pellentesque. Phasellus vestibulum lorem sed risus ultricies tristique nulla. Quis blandit turpis cursus in hac habitasse platea dictumst quisque. Eros donec ac odio tempor orci dapibus ultrices. Aliquam sem et tortor consequat id porta nibh. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla. Diam vulputate ut pharetra sit amet. Ut tellus elementum sagittis vitae et leo. Arcu non odio euismod lacinia at quis risus sed vulputate.
+Tristique `console.log()` senectus et netus et malesuada fames ac turpis. Ridiculous mus mauris vitae ultricies leo integer malesuada nunc vel. In mollis nunc sed id semper. Egestas tellus rutrum tellus pellentesque. Phasellus vestibulum lorem sed risus ultricies tristique nulla. Quis blandit turpis cursus in hac habitasse platea dictumst quisque. Eros donec ac odio tempor orci dapibus ultrices. Aliquam sem et tortor consequat id porta nibh. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla. Diam vulputate ut pharetra sit amet. Ut tellus elementum sagittis vitae et leo. Arcu non odio euismod lacinia at quis risus sed vulputate.
 
-```javascript
-const pluckDeep = key => obj => key.split('.').reduce((accum, key) => accum[key], obj)
+> Nice blockquote here with some nice message
 
-const compose = (...fns) => res => fns.reduce((accum, next) => next(accum), res)
+> Some multiline blockquote.
+> 
+> Across few lines nice and easy.
 
-const unfold = (f, seed) => {
-  const go = (f, seed, acc) => {
-    const res = f(seed)
-    return res ? go(f, res[1], acc.concat([res[0]])) : acc
-  }
-  return go(f, seed, [])
+```javascript[class="line-numbers"]
+function useUndo(initialPresent) {
+    const [past, setPast] = React.useState([])
+    const [present, setPresent] = React.useState(initialPresent)
+    const [future, setFuture] = React.useState([])
+    const canUndo = past.length !== 0
+    const canRedo = future.length !== 0
+    
+    const undo = React.useCallback(() => {
+        if (!canUndo) return
+        const previous = past[past.length - 1]
+        const newPast = past.slice(0, past.length - 1)
+        setPast(newPast)
+        setPresent(previous)
+        setFuture([present, ...future])
+    }, [canUndo, future, past, present])
+    
+    const redo = React.useCallback(() => {
+        if (!canRedo) return
+        const next = future[0]
+        const newFuture = future.slice(1)
+        setPast([...past, present])
+        setPresent(next)
+        setFuture(newFuture)
+    }, [canRedo, future, past, present])
+    
+    const set = React.useCallback(
+        newPresent => {
+            if (newPresent === present) {
+                return
+            }
+            setPast([...past, present])
+            setPresent(newPresent)
+            setFuture([])
+        },
+        [past, present],
+    )
+    
+    const reset = React.useCallback(newPresent => {
+        setPast([])
+        setPresent(newPresent)
+        setFuture([])
+    }, [])
+    
+    return [
+        {past, present, future},
+        {set, reset, undo, redo, canUndo, canRedo},
+    ]
 }
 ```

@@ -13,8 +13,8 @@ export default function PostPreview({
 }) {
   return (
     <div className='w-full md:w-1/2 xl:w-1/3 p-4'>
-      <div className="mb-5 relative h-60">
-        <CoverImage slug={slug} title={title} src={coverImage} />
+      <div className="mb-5">
+        <CoverImage slug={slug} title={title} src={coverImage} className='h-60'/>
       </div>
 
       <h4 className="mb-3 leading-snug">
