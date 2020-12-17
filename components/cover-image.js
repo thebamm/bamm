@@ -1,6 +1,6 @@
 import cn from 'classnames'
 import Link from 'next/link'
-import Image from 'next/image'
+// import Image from 'next/image'
 
 export default function CoverImage({ title, src, slug, figcaption, className }) {
   const imageClass = cn('bg-cover bg-center', className)
