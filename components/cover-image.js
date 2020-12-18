@@ -1,5 +1,6 @@
 import cn from 'classnames'
 import Link from 'next/link'
+import parse from 'html-react-parser'
 
 export default function CoverImage({ title, src, slug, figcaption, className }) {
   const pictureWrapClass = cn('relative block overflow-hidden m-0 inset-0', className)
@@ -44,7 +45,7 @@ export default function CoverImage({ title, src, slug, figcaption, className }) 
 
           {figcaption &&
             <figcaption>
-              {figcaption}
+              {parse(figcaption)}
             </figcaption>
           }
         </figure>

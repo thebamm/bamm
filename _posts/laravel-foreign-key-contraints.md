@@ -3,6 +3,7 @@ title: 'Laravel foreign key constraints'
 excerpt: 'A FOREIGN KEY is a key that is used to establish and enforce a link
 between 2 database tables. '
 coverImage: '/assets/blog/laravel-foreign-key-constraints-cover.jpeg'
+figcaption: 'Photo by <a href="https://unsplash.com/@niko_76" class="underline" target="_blank" rel="noopener">Nicolae Valera</a> on <a href="https://unsplash.com/" class="underline" target="_blank" rel="noopener">Unsplash</a>'
 date: '2020-12-18T05:35:07.322Z'
 author:
   name: Bojan Petkovski
