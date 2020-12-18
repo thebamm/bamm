@@ -1,10 +1,8 @@
 import cn from 'classnames'
 import Link from 'next/link'
-// import Image from 'next/image'
 
 export default function CoverImage({ title, src, slug, figcaption, className }) {
-  const imageClass = cn('bg-cover bg-center', className)
-  const pictureClass = cn('relative block overflow-hidden m-0 inset-0', className)
+  const pictureWrapClass = cn('relative block overflow-hidden m-0 inset-0', className)
 
   const pictureInlineClasses = {
     visibility: 'visible',
@@ -25,37 +23,15 @@ export default function CoverImage({ title, src, slug, figcaption, className }) 
   }
 
   const image = (
-    // <img
-    //   src={src}
-    //   alt={`Cover Image for ${title}`}
-    //   className={cn('shadow-small', {
-    //     'hover:shadow-medium transition-shadow duration-200': slug,
-    //   })}
-    //   width={1600}
-    //   height={450}
-    // />
-    // <Image
-    //   src={src}
-    //   alt={`Cover Image for ${title}`}
-    //   className={cn('shadow-small', {
-    //     'hover:shadow-medium transition-shadow duration-200': slug,
-    //   })}
-    //   layout='fill'
-    //   objectFit='cover'
-    //   quality={100}
-    //   // unoptimized={true}
-    //   // width={1600}
-    //   // height={450}
-    // />
-    // <div className={imageClass} style={{ backgroundImage: `url(${src})`}}/>
-
-    <div className={pictureClass}>
+    <div className={pictureWrapClass}>
       <picture>
+          <source srcSet={`${src}.avif`} type="image/avif"/>
           <source srcSet={`${src}.webp`} type="image/webp"/>
           <img src={src} alt={title} style={pictureInlineClasses}/>
       </picture>
     </div>
   )
+
   return (
     <div className="sm:mx-0">
       {slug ? (

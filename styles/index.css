@@ -41,6 +41,10 @@
     url("../fonts/Inter/Inter-Bold.woff?v=3.15") format("woff");
   }
 
+  a {
+    @apply text-apple-500 font-semibold hover:underline;
+  }
+
   h1 {
     @apply text-6xl font-bold;
   }
@@ -79,7 +83,7 @@
 }
 
 .remark-highlight {
-  @apply mx-0 md:-mx-12 lg:-mx-20;
+  @apply mx-0 md:-mx-12 lg:-mx-16;
 }
 
 /*!* PrismJS 1.22.0*/
