@@ -3,9 +3,9 @@ import PostPreview from '../components/post-preview'
 export default function MoreStories({ posts }) {
   return (
     <section>
-      <h3 className="mb-8">
-        More Stories
-      </h3>
+      <h4 className="mb-8">
+        Latest posts
+      </h4>
 
       <div className="flex flex-wrap -m-4">
         {posts.map((post) => (

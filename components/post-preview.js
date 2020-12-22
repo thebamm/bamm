@@ -17,6 +17,11 @@ export default function PostPreview({
         <CoverImage slug={slug} title={title} src={coverImage} className='h-60'/>
       </div>
 
+      <div className='mb-6'>
+        <DateFormatter dateString={date} className='text-coal-400 dark:text-apple-50 uppercase'/>
+        {/*<p className='inline-block rounded-lg font-medium leading-none py-2 px-3 text-sm bg-salmon-100 text-salmon-500'>Category</p>*/}
+      </div>
+
       <h4 className="mb-3 leading-snug">
         {/*<Link as={`/posts/${slug}`} href="/posts/[slug]" href={`/posts/${encodeURIComponent(slug)}`}>*/}
         <Link as={`/posts/${slug}`} href={`/posts/${encodeURIComponent(slug)}`}>
@@ -24,13 +29,12 @@ export default function PostPreview({
         </Link>
       </h4>
 
-      <div className='mb-4'>
-        <p className='text-xl font-bold'>{author.name}</p>
-        <DateFormatter dateString={date}  className='text-coal-400 dark:text-apple-50'/>
-      </div>
+      {/*<p className="leading-relaxed mb-4">{excerpt}</p>*/}
 
-      <p className="leading-relaxed mb-4">{excerpt}</p>
-      {/*<Avatar name={author.name} picture={author.picture} />*/}
+      <div className='mb-4'>
+        <p className='font-bold'>{author.name}</p>
+        {/*<DateFormatter dateString={date}  className='text-sm text-coal-400 dark:text-apple-50'/>*/}
+      </div>
     </div>
   )
 }

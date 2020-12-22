@@ -76,10 +76,53 @@
   figcaption {
     @apply py-2 text-center max-w-2xl mx-auto text-coal-400;
   }
+
+  figcaption  a {
+    @apply underline;
+  }
+
+  .title-bg:before {
+    content: "";
+    display: block;
+    background-color: #eee;
+    width: 60vw;
+    max-width: 600px;
+    height: 30vw;
+    max-height: 200px;
+    z-index: -1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%) skew(0deg, -10deg);
+    transform: translate(-50%, -50%) skew(0deg, -10deg);
+    /*background: linear-gradient(45deg, #f9ecfe, #fefae4);*/
+    background: linear-gradient(45deg, #d5eed5, #ebebeb);
+  }
+
+  /* Works on Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #55bb55 #ebebeb;
+  }
+
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ebebeb;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #55bb55;
+    border-radius: 20px;
+    border: 3px solid #ebebeb;
+  }
 }
 
 .remark-highlight {
-  @apply mx-0 md:-mx-12 lg:-mx-16;
+  @apply mx-0 my-12 md:-mx-12 lg:-mx-16;
 }
 
 /*!* PrismJS 1.22.0*/
@@ -393,6 +436,10 @@ pre[class*="language-"].line-numbers {
   position: relative;
   padding-left: 3.8em;
   counter-reset: linenumber;
+}
+
+pre[class*="language-"] {
+  @apply px-4  md:px-12 lg:px-16;
 }
 
 pre[class*="language-"].line-numbers > code {

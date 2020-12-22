@@ -4,18 +4,26 @@
 
 .markdown p,
 .markdown ul,
-.markdown ol,
-.markdown blockquote,
-.markdown .remark-highlight {
+.markdown ol {
   @apply my-6;
 }
 
 .markdown blockquote {
-  @apply border-l-4 border-apple-500 px-4;
+  @apply border-l-4 border-apple-500 px-4 my-12;
 }
 
 .markdown a {
-  @apply font-semibold underline hover:bg-coal-500 hover:text-apple-50 p-0.5;
+  /*@apply font-semibold underline hover:bg-coal-500 hover:text-apple-50 p-0.5;*/
+  @apply font-semibold transition-all;
+  /*background-image: linear-gradient(120deg,#f4cf58,#f4cf58);*/
+  background-image: linear-gradient(120deg, #ff755b, #ff755b);
+  background-repeat: no-repeat;
+  background-size: 100% 30%;
+  background-position: 0 100%;
+}
+
+.markdown a:hover  {
+  background-size: 100% 100%;
 }
 
 .markdown h2 {

@@ -11,7 +11,7 @@ export default function DateFormatter({ dateString, className }) {
       dateTime={dateString}
       className={timeClassNames}
     >
-      <IconClock className='mr-2'/>
+      {/*<IconClock className='mr-2'/>*/}
       {format(date, 'LLLL	d, yyyy')}
     </time>
   )
