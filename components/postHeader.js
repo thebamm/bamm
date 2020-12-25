@@ -1,6 +1,6 @@
-import DateFormatter from '../components/date-formatter'
-import CoverImage from '../components/cover-image'
-import PostTitle from '../components/post-title'
+import DateFormatter from './dateFormatter'
+import CoverImage from './coverImage'
+import PostTitle from './postTitle'
 
 export default function PostHeader({ title, coverImage, date, author, figcaption }) {
   return (
@@ -19,7 +19,10 @@ export default function PostHeader({ title, coverImage, date, author, figcaption
         </div>
       </div>
 
-      <div className="mb-8 md:mb-16 sm:mx-0">
+      <div className="mb-8 md:mb-16 sm:mx-0 relative">
+        <div className="bg-gray-100 w-full flex-none rounded-3xl"/>
+        <div
+          className="w-full flex-none -ml-full rounded-3xl transform shadow-lg bg-gradient-to-br from-cyan-400 to-light-blue-500 rotate-1 sm:rotate-2"/>
         <CoverImage title={title} src={coverImage} figcaption={figcaption} className='h-96'/>
       </div>
     </>

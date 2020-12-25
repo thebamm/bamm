@@ -77,6 +77,9 @@ module.exports = {
           500: theme('colors.coal.500'),
         },
       }),
+      zIndex: {
+        '-1': '-1',
+      },
       fontFamily: {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
       },
