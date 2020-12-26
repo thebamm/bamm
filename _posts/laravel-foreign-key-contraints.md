@@ -313,7 +313,7 @@ by default, if the env constant `DB_FOREIGN_KEYS` is not set.
 
 Under the hood this is what is happening in the grammar file:
 
-```php 
+```php[class="line-numbers"]
 /**
  * Compile the command to enable foreign key constraints.
  *

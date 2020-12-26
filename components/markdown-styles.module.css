@@ -3,13 +3,13 @@
 }
 
 .markdown>:first-child {
-  margin-top: 0;
+  @apply mt-0;
 }
 
 .markdown p,
 .markdown ul,
 .markdown ol {
-  @apply my-8;
+  @apply my-8 overflow-hidden;
 }
 
 .markdown blockquote {
@@ -31,9 +31,24 @@
 /*}*/
 
 .markdown h2 {
-  @apply text-3xl mt-12 mb-4 leading-snug;
+  @apply text-3xl mt-12 mb-4 leading-snug group flex;
 }
 
 .markdown h3 {
-  @apply text-2xl mt-8 mb-4 leading-snug;
+  @apply text-2xl mt-8 mb-4 leading-snug group flex;
+}
+
+.markdown h4 {
+  @apply text-xl mt-8 mb-4 leading-snug group flex;
+}
+
+.markdown h2 a,
+.markdown h3 a,
+.markdown h4 a {
+  @apply absolute opacity-0 group-hover:opacity-100;
+}
+
+.markdown .icon-link:after {
+  content: "#";
+  display: block;
 }
