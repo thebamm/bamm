@@ -195,10 +195,11 @@ pre[class*="language-"] {
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
+  @apply text-apple-500;
   padding: .2em;
   border-radius: .3em;
   font-size: 14px;
-  color: #7fdbca;
+  /*color: #7fdbca;*/
   word-break: break-word;
   white-space: pre-line;
 }

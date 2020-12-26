@@ -31,24 +31,26 @@
 /*}*/
 
 .markdown h2 {
-  @apply text-3xl mt-12 mb-4 leading-snug group flex;
+  @apply text-3xl mt-12 mb-4 leading-snug flex;
 }
 
 .markdown h3 {
-  @apply text-2xl mt-8 mb-4 leading-snug group flex;
+  @apply text-2xl mt-8 mb-4 leading-snug flex;
 }
 
 .markdown h4 {
-  @apply text-xl mt-8 mb-4 leading-snug group flex;
+  @apply text-xl mt-8 mb-4 leading-snug flex;
 }
 
 .markdown h2 a,
 .markdown h3 a,
 .markdown h4 a {
-  @apply absolute opacity-0 group-hover:opacity-100;
+  @apply absolute;
 }
 
-.markdown .icon-link:after {
+.markdown h2 a:after,
+.markdown h3 a:after,
+.markdown h4 a:after {
   content: "#";
-  display: block;
+  margin-left: -1.5rem;
 }
