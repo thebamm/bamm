@@ -39,11 +39,11 @@ export default function Post({ post, morePosts }) {
             <article className='mb-32'>
               <Head>
                 <title>{postTitle}</title>
-                <meta name="description"  content={OG_DESCRIPTION} />
+                <meta name="description"  content={post.title} />
 
                 <meta property="og:title" content={postTitle} />
                 <meta property="og:url" content={postUrl} />
-                <meta property="og:description" content={OG_DESCRIPTION} />
+                <meta property="og:description" content={post.title} />
                 <meta property="og:type" content="article" />
                 <meta property="og:image" content={post.ogImage.url} />
               </Head>
