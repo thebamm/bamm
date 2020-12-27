@@ -8,7 +8,7 @@ date: '2020-12-27T00:00:00.322Z'
 author:
   name: Bojan Petkovski
 ogImage:
-  url: '/assets/blog/bradford-nicolas-gWfmINd9-yY-unsplash.jpeg'
+  url: '/assets/blog/laravel-foreign-key-constraints-cover.jpeg'
 ---
 
 A FOREIGN KEY is a key that is used to establish and enforce a link

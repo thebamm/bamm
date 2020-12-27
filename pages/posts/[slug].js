@@ -6,8 +6,7 @@ import PostHeader from '../../components/postHeader'
 import Layout from '../../components/layout'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
 import PostTitle from '../../components/postTitle'
-import Head from 'next/head'
-import { CMS_NAME, OG_DESCRIPTION, OG_IMAGE_URL, SITE_MAIN_TITLE, SITE_URL } from '../../lib/constants'
+import { SITE_MAIN_TITLE, SITE_URL } from '../../lib/constants'
 import markdownToHtml from '../../lib/markdownToHtml'
 import { DiscussionEmbed } from 'disqus-react'
 
@@ -20,8 +19,7 @@ export default function Post({ post, morePosts }) {
 
   const postTitle = `${post.title} | ${SITE_MAIN_TITLE}`
   const postUrl = `${SITE_URL}/posts/${post.slug}`
-
-  const disqusShortname = "bamm-co"
+  const disqusShortname = 'bamm-co'
 
   const disqusConfig = {
     url: postUrl,
@@ -30,24 +28,19 @@ export default function Post({ post, morePosts }) {
   }
 
   return (
-    <Layout>
+    <Layout meta={{
+      title: postTitle,
+      description: `bamm wrote about ${post.title}`,
+      url: postUrl,
+      type: 'article',
+      image: `${SITE_URL}/${post.ogImage.url}`
+    }}>
       <Container className='pt-20 pb-32'>
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
             <article className='mb-32'>
-              <Head>
-                <title>{postTitle}</title>
-                <meta name="description"  content={post.title} />
-
-                <meta property="og:title" content={postTitle} />
-                <meta property="og:url" content={postUrl} />
-                <meta property="og:description" content={post.title} />
-                <meta property="og:type" content="article" />
-                <meta property="og:image" content={post.ogImage.url} />
-              </Head>
-
               <PostHeader
                 title={post.title}
                 coverImage={post.coverImage}

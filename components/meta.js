@@ -1,17 +1,32 @@
 import Head from 'next/head'
 import { OG_DESCRIPTION, OG_IMAGE_URL, SITE_MAIN_TITLE, SITE_URL } from '../lib/constants'
 
-export default function Meta() {
+export default function Meta({meta}) {
+  const metaData = {
+    title: meta?.title ?? SITE_MAIN_TITLE,
+    description: meta?.description ?? OG_DESCRIPTION,
+    url: meta?.url ?? SITE_URL,
+    type: meta?.type ?? 'website',
+    image: meta?.image ?? OG_IMAGE_URL
+  }
+
   return (
     <Head>
-      <title>{SITE_MAIN_TITLE}</title>
-      <meta name="description"  content={OG_DESCRIPTION} />
+      <title>{metaData.title}</title>
+      <meta name="description" content={metaData.description} />
 
-      <meta property="og:title" content={SITE_MAIN_TITLE} />
-      <meta property="og:url" content={SITE_URL} />
-      <meta property="og:description" content={OG_DESCRIPTION} />
-      <meta property="og:type" content="website" />
-      <meta property="og:image" content={OG_IMAGE_URL} />
+      <meta property="og:title" content={metaData.title} />
+      <meta property="og:url" content={metaData.url} />
+      <meta property="og:description" content={metaData.description} />
+      <meta property="og:type" content={metaData.type} />
+      <meta property="og:image" content={metaData.image} />
+
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:title" content={metaData.title} />
+      <meta name="twitter:description" content={metaData.description} />
+      <meta name="twitter:site" content={metaData.description} />
+      <meta name="twitter:image" content={metaData.image} />
+      <link rel="canonical" href={metaData.url} />
 
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
