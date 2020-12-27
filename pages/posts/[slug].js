@@ -17,7 +17,7 @@ export default function Post({ post, morePosts }) {
     return <ErrorPage statusCode={404} />
   }
 
-  const postTitle = `${post.title} | ${SITE_MAIN_TITLE}`
+  const postTitle = `${post.title} | bamm`
   const postUrl = `${SITE_URL}/posts/${post.slug}`
   const disqusShortname = 'bamm-co'
 
@@ -33,7 +33,7 @@ export default function Post({ post, morePosts }) {
       description: `bamm wrote about ${post.title}`,
       url: postUrl,
       type: 'article',
-      image: `${SITE_URL}/${post.ogImage.url}`
+      image: `${SITE_URL}${post.ogImage.url}`
     }}>
       <Container className='pt-20 pb-32'>
         {router.isFallback ? (
