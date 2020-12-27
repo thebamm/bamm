@@ -7,14 +7,26 @@ import Layout from '../../components/layout'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
 import PostTitle from '../../components/postTitle'
 import Head from 'next/head'
-import { CMS_NAME } from '../../lib/constants'
+import { CMS_NAME, OG_DESCRIPTION, OG_IMAGE_URL, SITE_MAIN_TITLE, SITE_URL } from '../../lib/constants'
 import markdownToHtml from '../../lib/markdownToHtml'
+import { DiscussionEmbed } from 'disqus-react'
 
 export default function Post({ post, morePosts }) {
   const router = useRouter()
 
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
+  }
+
+  const postTitle = `${post.title} | ${SITE_MAIN_TITLE}`
+  const postUrl = `${SITE_URL}/posts/${post.slug}`
+
+  const disqusShortname = "bamm-co"
+
+  const disqusConfig = {
+    url: postUrl,
+    identifier: post.slug,
+    title: post.title,
   }
 
   return (
@@ -24,11 +36,15 @@ export default function Post({ post, morePosts }) {
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <article>
+            <article className='mb-32'>
               <Head>
-                <title>
-                  {post.title} | Next.js Blog Example with {CMS_NAME}
-                </title>
+                <title>{postTitle}</title>
+                <meta name="description"  content={OG_DESCRIPTION} />
+
+                <meta property="og:title" content={postTitle} />
+                <meta property="og:url" content={postUrl} />
+                <meta property="og:description" content={OG_DESCRIPTION} />
+                <meta property="og:type" content="article" />
                 <meta property="og:image" content={post.ogImage.url} />
               </Head>
 
@@ -42,6 +58,13 @@ export default function Post({ post, morePosts }) {
 
               <PostBody content={post.content} />
             </article>
+
+            <div className='max-w-2xl mx-auto'>
+              <DiscussionEmbed
+                shortname={disqusShortname}
+                config={disqusConfig}
+              />
+            </div>
           </>
         )}
       </Container>

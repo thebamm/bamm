@@ -402,17 +402,23 @@ $table->foreignId('user_id')
     ->onDelete('cascade');
 ```
 
-In simple words, if for an example you delete the `user` in your `users` table, 
+In simple words, if for an example you delete a `user` row in your `users` table, 
 all the related `posts` records that are referencing that `user_id` will also be 
 deleted, if we use the `onDelete()` method with `cascade` argument.
 
-One thing to watch for, is that when using soft deletes (set the `SoftDeletes` trait on your model), 
+One thing to watch for, is that when using soft deletes (if you set the `SoftDeletes` trait on your model), 
 no relation records will be deleted when using the `onDelete()` method with `cascade` argument.
 
 ### Conclusion
 
 I think we have covered a small part about what are foreign key constraints, 
-what are they used for and how to disable them when we need to perform some "illegal" operation.
+what are they used for and how to disable them when we need to perform some "illegal" operations.
 
 In my opinion, foreign keys are needed to maintain the integrity and consistency 
 of your data, and are one of the key points when using relational databases.
+
+Do you know other pros and cons from using foreign keys? 
+Maybe some other tips and tricks?
+
+
+Hit me in the comments bellow :)

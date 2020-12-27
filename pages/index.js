@@ -4,7 +4,7 @@ import HeroPost from '../components/heroPost'
 import Layout from '../components/layout'
 import { getAllPosts } from '../lib/api'
 import Head from 'next/head'
-import { CMS_NAME } from '../lib/constants'
+import { SITE_MAIN_TITLE } from '../lib/constants'
 import HomeHero from '../components/homeHero'
 
 export default function Index({ allPosts }) {
@@ -14,7 +14,7 @@ export default function Index({ allPosts }) {
   return (
     <Layout>
       <Head>
-        <title>Next.js Blog Example with {CMS_NAME}</title>
+        <title>{SITE_MAIN_TITLE}</title>
       </Head>
 
       <HomeHero/>
