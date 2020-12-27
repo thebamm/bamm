@@ -4,11 +4,11 @@ excerpt: 'A FOREIGN KEY is a key that is used to establish and enforce a link
 between 2 database tables. '
 coverImage: '/assets/blog/laravel-foreign-key-constraints-cover.jpeg'
 figcaption: 'Photo by <a href="https://unsplash.com/@niko_76" target="_blank" rel="noopener">Nicolae Valera</a> on <a href="https://unsplash.com/" target="_blank" rel="noopener">Unsplash</a>'
-date: '2020-12-18T05:35:07.322Z'
+date: '2020-12-27T00:00:00.322Z'
 author:
   name: Bojan Petkovski
 ogImage:
-  url: '/assets/blog/laravel-foreign-key-constraints-cover.jpeg'
+  url: '/assets/blog/bradford-nicolas-gWfmINd9-yY-unsplash.jpeg'
 ---
 
 A FOREIGN KEY is a key that is used to establish and enforce a link
@@ -36,7 +36,9 @@ use Illuminate\Support\Facades\Schema;
 Schema::table('posts', function (Blueprint $table) {
     $table->unsignedBigInteger('user_id');
 
-    $table->foreign('user_id')->references('id')->on('users');
+    $table->foreign('user_id')
+        ->references('id')
+        ->on('users');
 });
 ```
 
@@ -44,7 +46,8 @@ We can also rewrite this in a more readable manner:
 
 ```php
 Schema::table('posts', function (Blueprint $table) {
-    $table->foreignId('user_id')->constrained();
+    $table->foreignId('user_id')
+        ->constrained();
 });
 ```
 
@@ -55,7 +58,8 @@ table name as an argument to the `constrained` method.
 
 ```php 
 Schema::table('posts', function (Blueprint $table) {
-    $table->foreignId('user_id')->constrained('users');
+    $table->foreignId('user_id')
+        ->constrained('users');
 });
 ```
 
@@ -64,8 +68,8 @@ the `constrained` method.
 
 ```php 
 $table->foreignId('user_id')
-      ->nullable()
-      ->constrained();
+    ->nullable()
+    ->constrained();
 ```
 
 ## Disable foreign key checks
@@ -257,7 +261,10 @@ To fix this issue, we need to make the foreign keys in the migrations `deferrabl
 Schema::table('posts', function (Blueprint $table) {
     $table->unsignedBigInteger('user_id');
     
-    $table->foreign('user_id')->deferrable()->references('id')->on('users');
+    $table->foreign('user_id')
+        ->deferrable()
+        ->references('id')
+        ->on('users');
 });
 
 // or
@@ -313,7 +320,7 @@ by default, if the env constant `DB_FOREIGN_KEYS` is not set.
 
 Under the hood this is what is happening in the grammar file:
 
-```php[class="line-numbers"]
+```php
 /**
  * Compile the command to enable foreign key constraints.
  *
@@ -335,12 +342,77 @@ public function compileDisableForeignKeyConstraints()
 }
 ```
 
-I have used SQLite when I am running tests, and so far I have not come up across any issues.
+Personally, I have used SQLite only when I run tests, 
+and so far I have not had any issues with foreign key constraints.
 
 You can explore the SQLite grammar file here: `vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/SQLiteGrammar.php`
+
+### Dropping foreign keys
+
+To drop a foreign key, you can use the `dropForeign` method and as an argument 
+you need to pass the name of the foreign key constraint. The name is based on the
+name of the table, and the columns in the constraint followed by the `_foreign` suffix.
+
+```php 
+$table->dropForeign('posts_user_id_foreign');
+```
+
+You can also use a simple way, where you can just pass the name of the foreign key in an array,
+
+```php
+$table->dropForeign(['user_id']);
+```
+
+### Cascade
+
+In the SQL 2003 standard there are 5 referential actions:
+
+* CASCADE
+* RESTRICT
+* NO ACTION
+* SET NULL
+* SET DEFAULT
+
+We will take a look at the `CASCADE` operation.
+
+As per `MySQL` documentation:
+
+When an UPDATE or DELETE operation affects a key value in the parent table that has matching rows in the child table, the result depends on the referential action specified by ON UPDATE and ON DELETE subclauses of the FOREIGN KEY clause.
+
+`CASCADE`: Delete or update the row from the parent table and automatically delete or update the matching rows in the child table. Both ON DELETE CASCADE and ON UPDATE CASCADE are supported. Between two tables, do not define several ON UPDATE CASCADE clauses that act on the same column in the parent table or in the child table.
+
+* `ON DELETE CASCADE` means that if the parent record is deleted, the child records are deleted as well.
+* `ON UPDATE CASCADE` means that if a parent primary key is updated, the child records are updated as well.
+* `ON UPDATE CASCADE ON DELETE CASCADE` means that if the parent is updated or deleted, the changes are cascaded to the child records.
+
+In Laravel, we can apply the `CASCADE` operation like this:
+
+```php
+$table->foreign('user_id')
+    ->references('id')
+    ->on('users')
+    ->onUpdate('cascade')
+    ->onDelete('cascade');
+
+// or
+
+$table->foreignId('user_id')
+    ->constrained()
+    ->onUpdate('cascade')
+    ->onDelete('cascade');
+```
+
+In simple words, if for an example you delete the `user` in your `users` table, 
+all the related `posts` records that are referencing that `user_id` will also be 
+deleted, if we use the `onDelete()` method with `cascade` argument.
+
+One thing to watch for, is that when using soft deletes (set the `SoftDeletes` trait on your model), 
+no relation records will be deleted when using the `onDelete()` method with `cascade` argument.
 
 ### Conclusion
 
 I think we have covered a small part about what are foreign key constraints, 
 what are they used for and how to disable them when we need to perform some "illegal" operation.
 
+In my opinion, foreign keys are needed to maintain the integrity and consistency 
+of your data, and are one of the key points when using relational databases.
