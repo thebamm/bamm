@@ -7,6 +7,8 @@ figcaption: 'Photo by <a href="https://unsplash.com/@niko_76" target="_blank" re
 date: '2020-12-27T00:00:00.322Z'
 author:
   name: Bojan Petkovski
+  twitter: object505
+  gravatar: d132c4301b9b998f396871b74b3a97fc
 ogImage:
   url: '/assets/blog/laravel-foreign-key-constraints-cover.jpeg'
 ---
@@ -422,3 +424,5 @@ Maybe some other tips and tricks?
 
 
 Hit me in the comments bellow :)
+
+[https://twitter.com/object505]: https://twitter.com/object505

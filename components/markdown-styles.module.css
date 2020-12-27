@@ -17,7 +17,7 @@
 }
 
 .markdown a {
-  @apply font-semibold transition-transform text-apple-500;
+  @apply font-semibold border-b-4 border-apple-500 pb-0.5;
 }
 
 .markdown h2 {
@@ -35,7 +35,7 @@
 .markdown h2 a,
 .markdown h3 a,
 .markdown h4 a {
-  @apply absolute;
+  @apply absolute text-apple-500;
 }
 
 .markdown h2 a:after,

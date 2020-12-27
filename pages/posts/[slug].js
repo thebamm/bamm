@@ -6,9 +6,10 @@ import PostHeader from '../../components/postHeader'
 import Layout from '../../components/layout'
 import { getPostBySlug, getAllPosts } from '../../lib/api'
 import PostTitle from '../../components/postTitle'
-import { SITE_MAIN_TITLE, SITE_URL } from '../../lib/constants'
+import { SITE_URL } from '../../lib/constants'
 import markdownToHtml from '../../lib/markdownToHtml'
 import { DiscussionEmbed } from 'disqus-react'
+import PostAuthor from '../../components/postAuthor'
 
 export default function Post({ post, morePosts }) {
   const router = useRouter()
@@ -50,6 +51,8 @@ export default function Post({ post, morePosts }) {
               />
 
               <PostBody content={post.content} />
+
+              <PostAuthor author={post.author}/>
             </article>
 
             <div className='max-w-2xl mx-auto'>
