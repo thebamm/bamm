@@ -20,12 +20,15 @@ export default function Meta({meta}) {
       <meta property="og:description" content={metaData.description} />
       <meta property="og:type" content={metaData.type} />
       <meta property="og:image" content={metaData.image} />
+      <meta property="og:site_name" content={SITE_MAIN_TITLE} />
 
-      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={metaData.title} />
       <meta name="twitter:description" content={metaData.description} />
       <meta name="twitter:site" content={metaData.description} />
       <meta name="twitter:image" content={metaData.image} />
+      <meta name="twitter:image:alt" content={metaData.title} />
+
       <link rel="canonical" href={metaData.url} />
 
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
