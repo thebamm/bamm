@@ -10,12 +10,12 @@ import HomeHero from '../components/homeHero'
 export default function Index({ allPosts }) {
   const heroPost = allPosts[0]
   const morePosts = allPosts.slice(1)
-console.log(heroPost)
+  
   return (
     <Layout>
       <HomeHero/>
 
-      <Container className='pt-20 pb-32'>
+      <Container className='pt-8 pb-32'>
         {heroPost && (
           <HeroPost
             title={heroPost.title}
