@@ -36,7 +36,7 @@ export default function Post({ post, morePosts }) {
       type: 'article',
       image: `${SITE_URL}${post.ogImage.url}`
     }}>
-      <Container className='pt-20 pb-32'>
+      <Container className='pt-4 pb-32'>
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
