@@ -1,18 +1,18 @@
-import Avatar from '../components/avatar'
 import DateFormatter from './dateFormatter'
 import CoverImage from './coverImage'
 import Link from 'next/link'
+import { IconArrowRight } from './icons'
 
 export default function HeroPost({
   title,
   coverImage,
   date,
-  excerpt,
-  author,
   slug,
+  smallContent,
 }) {
+
   return (
-    <section className='flex flex-wrap mb-8 md:mb-16'>
+    <section className='flex flex-wrap md:items-center mb-8 md:mb-16'>
       <div className="w-full md:w-1/2 mb-5 md:mb-0">
         <CoverImage title={title} src={coverImage} slug={slug} className='h-96'/>
       </div>
@@ -29,12 +29,11 @@ export default function HeroPost({
           </Link>
         </h3>
 
-        <p className="leading-relaxed mb-4">{excerpt}</p>
+        <p className="leading-relaxed mb-8">{smallContent}</p>
 
-        <div className="mb-4">
-          <p className='text-xl font-bold'>{author.name}</p>
-          {/*<DateFormatter dateString={date} className='text-coal-400 dark:text-apple-50'/>*/}
-        </div>
+        <Link as={`/posts/${slug}`} href={`/posts/${encodeURIComponent(slug)}`}>
+          <a className="flex items-center font-semibold">Read more <IconArrowRight className='text-xl ml-1 text-apple-500'/></a>
+        </Link>
       </div>
     </section>
   )

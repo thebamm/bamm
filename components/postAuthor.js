@@ -11,6 +11,10 @@ const PostAuthor = ({author}) => {
       }
 
       <div className="ml-4">
+        <div className="mb-2">
+          Written by:
+        </div>
+
         <div className="text-base font-bold">
           {author.name}
         </div>

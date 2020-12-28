@@ -51,6 +51,19 @@ export const IconClock = ({className}) => {
   )
 }
 
+export const IconArrowRight = ({className}) => {
+  return (
+    <svg
+      className={svgClass(className)}
+      xmlns='http://www.w3.org/2000/svg'
+      viewBox='0 0 256 256'
+    >
+      <path fill="none" d="M0 0h256v256H0z"/>
+      <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="16" d="M40 128h176M144 56l72 72-72 72"/>
+    </svg>
+  )
+}
+
 export const IconWavyLine = ({className}) => {
   return (
     <svg

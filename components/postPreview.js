@@ -30,10 +30,10 @@ export default function PostPreview({
 
       {/*<p className="leading-relaxed mb-4">{excerpt}</p>*/}
 
-      <div className='mb-4'>
-        <p className='font-bold'>{author.name}</p>
-        {/*<DateFormatter dateString={date}  className='text-sm text-coal-400 dark:text-apple-50'/>*/}
-      </div>
+      {/*<div className='mb-4'>*/}
+      {/*  <p className='font-bold'>{author.name}</p>*/}
+      {/*  /!*<DateFormatter dateString={date}  className='text-sm text-coal-400 dark:text-apple-50'/>*!/*/}
+      {/*</div>*/}
     </div>
   )
 }
