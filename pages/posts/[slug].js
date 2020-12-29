@@ -10,6 +10,7 @@ import { SITE_URL } from '../../lib/constants'
 import markdownToHtml from '../../lib/markdownToHtml'
 import { DiscussionEmbed } from 'disqus-react'
 import PostAuthor from '../../components/postAuthor'
+import SocialShare from '../../components/socialShare'
 
 export default function Post({ post, morePosts }) {
   const router = useRouter()
@@ -51,6 +52,8 @@ export default function Post({ post, morePosts }) {
               />
 
               <PostBody content={post.content} />
+
+              <SocialShare title={postTitle} url={postUrl}/>
 
               <PostAuthor author={post.author}/>
             </article>

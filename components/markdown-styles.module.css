@@ -35,12 +35,12 @@
 .markdown h2 a,
 .markdown h3 a,
 .markdown h4 a {
-  @apply absolute text-apple-500;
+  @apply relative md:absolute text-apple-500 border-0 pb-0;
 }
 
 .markdown h2 a:after,
 .markdown h3 a:after,
 .markdown h4 a:after {
   content: "#";
-  @apply -ml-4 md:-ml-6;
+  @apply mr-1 md:-ml-6;
 }

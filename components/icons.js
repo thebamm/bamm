@@ -75,3 +75,42 @@ export const IconWavyLine = ({className}) => {
     </svg>
   )
 }
+
+export const IconFacebookFill = ({className}) => {
+  return (
+    <svg
+      className={svgClass(className)}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 256 256"
+    >
+      <path fill="none" d="M0 0h256v256H0z"/>
+      <path d="M128 24a104.002 104.002 0 00-8 207.695v-79.694H96a8 8 0 010-16h24v-24a32.037 32.037 0 0132-32h16a8 8 0 010 16h-16a16.018 16.018 0 00-16 16v24h24a8 8 0 010 16h-24v79.694A104.002 104.002 0 00128 24z"/>
+    </svg>
+  )
+}
+
+export const IconTwitterFill = ({className}) => {
+  return (
+    <svg
+      className={svgClass(className)}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 256 256"
+    >
+      <path fill="none" d="M0 0h256v256H0z"/>
+      <path d="M246.412 55.87a7.999 7.999 0 00-8.954-2.792 120.507 120.507 0 01-30.342 6.014 48.003 48.003 0 00-87.12 26.511 119.687 119.687 0 01-76.65-52.24 8 8 0 00-14.415 2.226 136.21 136.21 0 0044.862 141.606 119.464 119.464 0 01-55.93 14.792 8.007 8.007 0 00-3.767 15.006 136.028 136.028 0 00201.62-110.136A135.605 135.605 0 00246.56 65.25a7.999 7.999 0 00-.147-9.38z"/>
+    </svg>
+  )
+}
+
+export const IconLinkedinFill = ({className}) => {
+  return (
+    <svg
+      className={svgClass(className)}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 256 256"
+    >
+      <path fill="none" d="M0 0h256v256H0z"/>
+      <path d="M208 32H48a16.018 16.018 0 00-16 16v160a16.018 16.018 0 0016 16h160a16.018 16.018 0 0016-16V48a16.018 16.018 0 00-16-16zM96 176a8 8 0 01-16 0v-64a8 8 0 0116 0zm-8-84a12 12 0 1112-12 12 12 0 01-12 12zm96 84a8 8 0 01-16 0v-36a20 20 0 10-40 0v36a8 8 0 01-16 0v-64a7.997 7.997 0 0115.795-1.778A35.981 35.981 0 01184 140.001z"/>
+    </svg>
+  )
+}
