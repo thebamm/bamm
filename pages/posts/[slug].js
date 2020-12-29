@@ -53,9 +53,9 @@ export default function Post({ post, morePosts }) {
 
               <PostBody content={post.content} />
 
-              <SocialShare title={postTitle} url={postUrl}/>
-
               <PostAuthor author={post.author}/>
+
+              <SocialShare title={postTitle} url={postUrl}/>
             </article>
 
             <div className='max-w-2xl mx-auto'>
