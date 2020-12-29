@@ -29,11 +29,13 @@ export default function HeroPost({
           </Link>
         </h3>
 
-        <p className="leading-relaxed mb-8">{smallContent}</p>
+        <p className="leading-relaxed mb-8">
+          {smallContent}
 
-        <Link as={`/posts/${slug}`} href={`/posts/${encodeURIComponent(slug)}`}>
-          <a className="flex items-center font-semibold">Read more <IconArrowRight className='text-xl ml-1 text-apple-500'/></a>
-        </Link>
+          <Link as={`/posts/${slug}`} href={`/posts/${encodeURIComponent(slug)}`}>
+            <a className="flex items-center mt-6 font-semibold">Read more <IconArrowRight className='text-xl ml-1 text-apple-500'/></a>
+          </Link>
+        </p>
       </div>
     </section>
   )

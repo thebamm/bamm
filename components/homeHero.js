@@ -3,10 +3,10 @@ import { LogoIcon } from './icons'
 
 const HomeHero = () => {
   return (
-    <div className='text-center py-12 md:py-24 relative'>
-      <div className='absolute inset-0 opacity-20 -z-1'>
+    <div className='text-center px-4 py-12 md:py-24 relative'>
+      <div className='absolute max-w-full overflow-hidden inset-0 opacity-20 -z-1'>
         <svg
-          className='w-full absolute bottom-0 left-0'
+          className='h-full absolute bottom-0 left-1/2 transform -translate-x-2/4'
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1440 320"
         >
