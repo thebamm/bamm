@@ -18,8 +18,8 @@ const HomeHero = () => {
       </div>
 
       <LogoIcon className='text-8xl mb-8 text-apple-500'/>
-      <h2 className='mb-8'>Start learning with <span>bamm</span> today.</h2>
-      <p className='text-2xl font-semibold'>Learn and grow while we learn and grow.</p>
+      <h2 className='mb-8'>Start learning with <span>bamm</span> today</h2>
+      <p className='text-2xl font-semibold'>Learn and grow while we learn and grow</p>
     </div>
   )
 }
