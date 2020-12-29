@@ -15,6 +15,8 @@ export default function Meta({meta}) {
       <title>{metaData.title}</title>
       <meta name="description" content={metaData.description} />
 
+      <meta name="google-site-verification" content="4hZ3OkqISzV3DtFxvX_ksjCAx7WtNzYvNXpjo31AeX0" />
+
       <meta property="og:title" content={metaData.title} />
       <meta property="og:url" content={metaData.url} />
       <meta property="og:description" content={metaData.description} />
