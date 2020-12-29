@@ -2,7 +2,7 @@ import { IconFacebookFill, IconLinkedinFill, IconTwitterFill } from './icons'
 
 const SocialShare = ({ url, title }) => {
   return (
-    <div className='flex items-center justify-evenly max-w-2xl mx-auto'>
+    <div className='flex items-center justify-evenly max-w-2xl mx-auto border-t-2 border-coal-100 mt-20 pt-12'>
       <p>Share</p>
       <a
         href={`https://twitter.com/share?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`}
