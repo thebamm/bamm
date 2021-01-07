@@ -25,6 +25,7 @@ export default function Index({ allPosts }) {
             slug={heroPost.slug}
             excerpt={heroPost.excerpt}
             smallContent={heroPost.smallContent}
+            category={heroPost.category}
           />
         )}
 
@@ -44,7 +45,8 @@ export async function getStaticProps() {
     'author',
     'coverImage',
     'excerpt',
-    'smallContent'
+    'smallContent',
+    'category',
   ])
 
   return {

@@ -1,6 +1,7 @@
 import DateFormatter from './dateFormatter'
 import CoverImage from './coverImage'
 import Link from 'next/link'
+import PostCategory from './postCategory'
 
 export default function PostPreview({
   title,
@@ -9,6 +10,8 @@ export default function PostPreview({
   excerpt,
   author,
   slug,
+  smallContent,
+  category
 }) {
   return (
     <div className='w-full md:w-1/2 xl:w-1/3 p-4'>
@@ -17,8 +20,7 @@ export default function PostPreview({
       </div>
 
       <div className='mb-6'>
-        <DateFormatter dateString={date} className='text-coal-400 dark:text-apple-50 uppercase'/>
-        {/*<p className='inline-block rounded-lg font-medium leading-none py-2 px-3 text-sm bg-salmon-100 text-salmon-500'>Category</p>*/}
+        <PostCategory>{category}</PostCategory>
       </div>
 
       <h4 className="mb-3 leading-snug">
@@ -27,6 +29,10 @@ export default function PostPreview({
           <a className="hover:underline">{title}</a>
         </Link>
       </h4>
+
+      <p className="leading-relaxed mb-6">{smallContent}</p>
+
+      <DateFormatter dateString={date} className='text-sm text-coal-400 dark:text-apple-50 uppercase mb-8'/>
 
       {/*<p className="leading-relaxed mb-4">{excerpt}</p>*/}
 

@@ -1,8 +1,9 @@
-import Footer from '../components/footer'
-import Meta from '../components/meta'
 import Header from './header'
+import Footer from './footer'
+import Meta from './meta'
+// import NewsletterForm from './newsletterForm'
 
-export default function Layout({ preview, meta, children }) {
+export default function Layout({ meta, children }) {
   return (
     <>
       <Meta meta={meta} />
@@ -12,6 +13,8 @@ export default function Layout({ preview, meta, children }) {
       <div className="min-h-screen">
         <main>{children}</main>
       </div>
+
+      {/*<NewsletterForm/>*/}
 
       <Footer />
     </>

@@ -1,9 +1,8 @@
 ---
 title: 'Laravel foreign key constraints'
-excerpt: 'A FOREIGN KEY is a key that is used to establish and enforce a link
-between 2 database tables. '
+excerpt: ''
 coverImage: '/assets/blog/laravel-foreign-key-constraints-cover.jpeg'
-figcaption: 'Photo by <a href="https://unsplash.com/@niko_76" target="_blank" rel="noopener">Nicolae Valera</a> on <a href="https://unsplash.com/" target="_blank" rel="noopener">Unsplash</a>'
+figcaption: 'Photo by <a href="https://unsplash.com/@niko_76" target="_blank" rel="noopener noreferrer nofollow">Nicolae Valera</a> on <a href="https://unsplash.com/" target="_blank" rel="noopener noreferrer nofollow">Unsplash</a>'
 date: '2020-12-27T00:00:00.322Z'
 author:
   name: Bojan Petkovski
@@ -11,6 +10,7 @@ author:
   gravatar: d132c4301b9b998f396871b74b3a97fc
 ogImage:
   url: '/assets/blog/laravel-foreign-key-constraints-cover.jpeg'
+category: 'Laravel'
 ---
 
 A FOREIGN KEY is a key that is used to establish and enforce a link
@@ -20,7 +20,7 @@ to identify the relationship between the child table that stores the
 FOREIGN KEY and the parent or referent table that is referenced 
 by its PRIMARY KEY. Basically, FOREIGN KEY constraints enforce referential integrity.
 
-<a href="https://en.wikipedia.org/wiki/Referential_integrity" target="_blank" rel="noopener">Referential integrity</a> 
+<a href="https://en.wikipedia.org/wiki/Referential_integrity" target="_blank" rel="noopener noreferrer nofollow">Referential integrity</a> 
 is a property of data stating that all its 
 references are valid. In the context of relational databases, 
 it requires that if a value of one attribute (column) of a 
@@ -411,7 +411,7 @@ deleted, if we use the `onDelete()` method with `cascade` argument.
 One thing to watch for, is that when using soft deletes (if you set the `SoftDeletes` trait on your model), 
 no relation records will be deleted when using the `onDelete()` method with `cascade` argument.
 
-### Conclusion
+## Conclusion
 
 I think we have covered a small part about what are foreign key constraints, 
 what are they used for and how to disable them when we need to perform some "illegal" operations.
