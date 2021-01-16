@@ -181,4 +181,4 @@ Do you know an easier way to do it?
 
 Or maybe you have some remarks about this set up?
 
-Hit me in the comments bellow :)
+Hit me in the comments below :)

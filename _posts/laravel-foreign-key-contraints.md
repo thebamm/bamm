@@ -422,7 +422,4 @@ of your data, and are one of the key points when using relational databases.
 Do you know other pros and cons from using foreign keys? 
 Maybe some other tips and tricks?
 
-
-Hit me in the comments bellow :)
-
-[https://twitter.com/object505]: https://twitter.com/object505
+Hit me in the comments below :)
